@@ -31,9 +31,40 @@
             </div>
             <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
               <div class="card-profile-actions py-4 mt-lg-0">
-                <a href="javascript:void(0)" class="btn btn-sm btn-default float-right">Preguntar</a>
+                <a href="javascript:void(0)" (click)="open(classic2, 'Notification', '')" class="btn btn-sm btn-default float-right">Preguntar</a>
+                <div class="col-md-4">
+                  <ng-template #classic2 let-c="close" let-d="dismiss">
+                    <div class="modal-content bg-gradient-danger">
+                      <div class="modal-header">
+                        <h6 class="modal-title" id="modal-title-notification">Realice su consulta</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="py-3 text-center">
+                          <p>Por favor tenga en cuenta de hacer preguntas carradas. </p>
+                        </div>
+                      </div>
+                      <div>
+                        <form role="form">
+                          <div class="form-group col-12" [ngClass]="{'focused':focus===true}">
+                            <div class="input-group input-group-alternative">
+                              <input class="form-control" placeholder="Pregunta" type="email" (focus)="focus=true" (blur)="focus=false">
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-white">Preguntar</button>
+                        <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+                      </div>
+                    </div>
+                  </ng-template>
+                </div>
               </div>
             </div>
+
             <div class="col-lg-4 order-lg-1">
               <div class="card-profile-stats d-flex justify-content-center">
                 <div>
@@ -52,8 +83,11 @@
             </div>
           </div>
           <div class="text-center mt-5">
-            <h3>Donato
-              <span class="font-weight-light">, 8</span>
+            <select ng-model="selectedCar">
+              <option>Donato</option>
+            </select>
+            <h3>
+              <span class="font-weight-light"> 8 años</span>
             </h3>
             <div class="h6 font-weight-300">
               <i class="ni location_pin mr-2"></i>Reynaga, Matias</div>
@@ -111,56 +145,56 @@
             </div>
             <div class="row">
               <br>
-                <div class="col-lg-6">
+              <div class="col-lg-6">
 
-                  <div class="mb-3">
-                    <small class="text-uppercase font-weight-bold">Pregunta realizada el 19/03/2020</small>
-                  </div>
-                  <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="pills">
-                    <ngb-tab>
-                      <ng-template ngbTabTitle>
-                        <i class="fa fa-pencil-square mr-2"></i> Pregunta
-                      </ng-template>
-                      <ng-template ngbTabContent>
-                        <p class="description">Puede salir a jugar?</p>
-                      </ng-template>
-                    </ngb-tab>
-                    <ngb-tab>
-                      <ng-template ngbTabTitle>
-                        <i class="fa fa-pencil-square-o mr-2"></i> Respuesta
-                      </ng-template>
-                      <ng-template ngbTabContent>
-                        <p class="description">Podrias intentar darle arroz con bife de pollo</p>
-                      </ng-template>
-                    </ngb-tab>
-                  </ngb-tabset>
+                <div class="mb-3">
+                  <small class="text-uppercase font-weight-bold">Pregunta realizada el 19/03/2020</small>
                 </div>
-  
-                <div class="col-lg-6">
-                  <div class="mb-3">
-                    <small class="text-uppercase font-weight-bold">Pregunta realizada el 14/03/2020</small>
-                  </div>
-                  <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="pills">
-                    <ngb-tab>
-                      <ng-template ngbTabTitle>
-                        <i class="fa fa-pencil-square mr-2"></i> Pregunta
-                      </ng-template>
-                      <ng-template ngbTabContent>
-                        <p class="description">Es posible sacarle el cono para que coma?</p>
-                      </ng-template>
-                    </ngb-tab>
-                    <ngb-tab>
-                      <ng-template ngbTabTitle>
-                        <i class="fa fa-pencil-square-o mr-2"></i> Respuesta
-                      </ng-template>
-                      <ng-template ngbTabContent>
-                        <p class="description">Despues de una cirugia es normal que el perro no tenga ganas de comer o tomar agua, solo se va a animar,
-                          no te preocupes... </p>
-                      </ng-template>
-                    </ngb-tab>
-                  </ngb-tabset>
-                </div>
+                <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="pills">
+                  <ngb-tab>
+                    <ng-template ngbTabTitle>
+                      <i class="fa fa-pencil-square mr-2"></i> Pregunta
+                    </ng-template>
+                    <ng-template ngbTabContent>
+                      <p class="description">Puede salir a jugar?</p>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab>
+                    <ng-template ngbTabTitle>
+                      <i class="fa fa-pencil-square-o mr-2"></i> Respuesta
+                    </ng-template>
+                    <ng-template ngbTabContent>
+                      <p class="description">Podrias intentar darle arroz con bife de pollo</p>
+                    </ng-template>
+                  </ngb-tab>
+                </ngb-tabset>
               </div>
+
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <small class="text-uppercase font-weight-bold">Pregunta realizada el 14/03/2020</small>
+                </div>
+                <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="pills">
+                  <ngb-tab>
+                    <ng-template ngbTabTitle>
+                      <i class="fa fa-pencil-square mr-2"></i> Pregunta
+                    </ng-template>
+                    <ng-template ngbTabContent>
+                      <p class="description">Es posible sacarle el cono para que coma?</p>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab>
+                    <ng-template ngbTabTitle>
+                      <i class="fa fa-pencil-square-o mr-2"></i> Respuesta
+                    </ng-template>
+                    <ng-template ngbTabContent>
+                      <p class="description">Despues de una cirugia es normal que el perro no tenga ganas de comer o tomar agua, solo se va a animar,
+                        no te preocupes... </p>
+                    </ng-template>
+                  </ngb-tab>
+                </ngb-tabset>
+              </div>
+            </div>
           </div>
         </div>
       </div>

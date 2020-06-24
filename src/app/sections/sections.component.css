@@ -3,3 +3,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.bg-gradient-danger {
+    background: linear-gradient(87deg, #282bf0 0, #8936f5 100%) !important;
+}
