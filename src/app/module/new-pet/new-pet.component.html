@@ -1,0 +1,114 @@
+<section class="section section-shaped section-lg">
+  <div class="shape shape-style-1 bg-gradient-default">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span> 
+  </div>
+  <div class="container pt-lg-md">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="card bg-secondary shadow border-0">
+          <div id="logo-container" class="card-header bg-white pb-5">
+            <img src="./assets/img/brand/logo2.png" style="width: 300px; " class="img-fluid">
+          </div>
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="text-center text-muted mb-4">
+              <small>Nueva publicacion</small>
+            </div>
+            <form role="form">
+              <div class="row">
+                <div class="form-group col-6" [ngClass]="{'focused':focus1===true}">
+                  <div class="input-group input-group-alternative mb-3">
+                    <input class="form-control" placeholder="Nombre" [(ngModel)]="mascota.nombre" [ngModelOptions]="{standalone: true}" type="email" (focus)="focus1=true" (blur)="focus1=false">
+                  </div>
+                </div>
+                <div class="form-group col-6" [ngClass]="{'focused':focus===true}">
+                  <div class="input-group input-group-alternative mb-3">
+                    <input class="form-control" placeholder="Edad" [(ngModel)]="mascota.edad" type="number" [ngModelOptions]="{standalone: true}" (focus)="focus=true" (blur)="focus=false">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-6" [ngClass]="{'focused':focus===true}">
+                  <div class="input-group input-group-alternative mb-3">
+                    <input class="form-control" placeholder="Raza/Cruza" type="text" [(ngModel)]="mascota.raza" (ngModelChange)="botonHablilitado()"  [ngModelOptions]="{standalone: true}" (focus)="focus=true" (blur)="focus=false">
+                  </div>
+                </div>
+                <!-- <div class="form-group col-6" [ngClass]="{'focused':focus===true}">
+                  <div class="input-group input-group-alternative mb-3">
+                    <input class="form-control" placeholder="Sexo" [(ngModel)]="mascota.sexo" type="text" [ngModelOptions]="{standalone: true}" (focus)="focus=true" (blur)="focus=false">
+                  </div>
+                </div> -->
+                <div class="form-group col-6">
+                  <div class="input-group input-group-alternative mb-3">
+                    <select id="sexo" name="sexo" placeholder="Sexo" value="sexo" [(ngModel)]="mascota.sexo" class="form-control" #sexo="ngModel">
+                      <option [value]="undefined" disabled selected hidden>Sexo</option>
+                        <option value="Macho" >Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                  </div>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group7" [ngClass]="{'focused':focus4===true}">
+                    <div class="input-group">
+                      <input class="form-control datepicker" placeholder="fecha de nacimiento" [(ngModel)]=" mascota.fechaNacimiento" [ngModelOptions]="{standalone: true}" ngbDatepicker
+                        #d2="ngbDatepicker" (click)="d2.toggle()" (focus)="focus4=true" (blur)="focus4=false" type="text" [dayTemplate]="t1"
+                        (dateSelect)="endDateChanged($event)" autocomplete="off" />
+                      <ng-template #t1 let-date let-focused="focused">
+                        <span class="custom-day" [class.text-white]="isActive(date)" [class.range-end]="isRangeEnd(date)" [class.range-start]="isRangeStart(date)"
+                          [class.btn-light]="isActive(date)" [class.bg-primary]="isActive(date)" [class.range]="isInRange(date)"
+                          [class.faded]="isInRange(date)">
+                          {{ date.day }}
+                        </span>
+                      </ng-template>
+                    </div>
+                  </div>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                  <input class="custom-control-input" id="customCheck2" type="checkbox" checked [(ngModel)]=" mascota.esterilizado" [ngModelOptions]="{standalone: true}">
+                  <label class="custom-control-label" for="customCheck2">
+                    <span>Esterilizado</span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <div class=" text-muted ">
+                  <small>Subir foto</small>
+                </div>
+                <input ng2FileSelect type="file" accept=".xml" />
+              </div>
+
+              <div class="text-center">
+                <button type="button" class="btn btn-primary mt-4">Asignar propietario</button>
+                <button type="button" class="btn btn-primary mt-4" (click)="guardarMascota(); open(classic2, 'Notification', '');" [disabled]="isDisabled">Confirmar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+<div>
+  <ng-template #classic2 let-c="close" let-d="dismiss">
+    <div class="modal-content bg-gradient-danger">
+      <div class="modal-body">
+        <div class="py-3 text-center">
+          <i class="ni ni-bell-55 ni-3x"></i>
+          <h4 class="heading mt-4">Mascota Guardada</h4>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<!-- 
+  -->

@@ -6,27 +6,33 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
-import { LandingComponent } from './landing/landing.component';
-import { ProfileComponent } from './profile/profile.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import { NewPetComponent } from './module/new-pet/new-pet.component';
+import { AdopcionComponent } from './module/adopcion/adopcion.component';
+import { ProfileComponent } from './module/profile/profile.component';
+import { HomeComponent } from './layout/home/home.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
-import { HomeModule } from './home/home.module';
-import { LoginComponent } from './login/login.component';
-import { TurnComponent } from './turn/turn.component';
-
+import { HomeModule } from './layout/home/home.module';
+import { LoginComponent } from './module/login/login.component';
+import { TurnComponent } from './module/turn/turn.component';
+import { PatientHistoryComponent } from './module/patient-history/patient-history.component';
+import { CreatePublicationComponent } from './module/create-publication/create-publication.component';
+import { QuestionsComponent } from './module/questions/questions.component';
+import { HttpClientModule } from '@angular/common/http'; 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
-    LandingComponent,
+    NewPetComponent,
+    AdopcionComponent,
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    TurnComponent
+    TurnComponent,
+    PatientHistoryComponent,
+    CreatePublicationComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,8 @@ import { TurnComponent } from './turn/turn.component';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

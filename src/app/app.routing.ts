@@ -3,22 +3,33 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { SignupComponent } from './signup/signup.component';
-import { LandingComponent } from './landing/landing.component';
-import { LoginComponent } from './login/login.component';
-import { TurnComponent } from './turn/turn.component';
-import { SectionsComponent } from './sections/sections.component';
+import { HomeComponent } from './layout/home/home.component';
+// import { ProfileComponent } from './module/profile/profile.component';
+// // import { SignupComponent } from './signup/signup.component';
+// import { LandingComponent } from './module/landing/landing.component';
+// import { SignupComponent } from './module/signup/signup.component';
+
+import { LoginComponent } from './module/login/login.component';
+import { TurnComponent } from './module/turn/turn.component';
+import { AdopcionComponent } from './module/adopcion/adopcion.component';
+import { ProfileComponent } from './module/profile/profile.component';
+import { PatientHistoryComponent } from './module/patient-history/patient-history.component';
+import { NewPetComponent } from './module/new-pet/new-pet.component';
+
+
+
 
 const routes: Routes =[
+  // { path: 'register',           component: SignupComponent },
+  // { path: 'landing',          component: LandingComponent },
+  // { path: 'solicitarTurno',          component: SignupComponent },
     { path: 'home',             component: HomeComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'register',           component: SignupComponent },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'turn',          component: TurnComponent },
+    { path: 'profile',     component: ProfileComponent },
     { path: 'login',          component: LoginComponent },
-    { path: 'sections',          component: SectionsComponent },
+    { path: 'turn',          component: TurnComponent },
+    { path: 'pruebas',          component: ProfileComponent },
+    { path: 'patient-history',          component: PatientHistoryComponent },
+    { path: 'new-pet',          component: NewPetComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

@@ -22,9 +22,9 @@
                 <small>Solitud de turno</small>
               </div>
               <form role="form">
-                  <select class="col-12" ng-model="selectedCar">
-                      <option>Donato</option>
-                    </select>
+                <select class="col-12" ng-model="selectedCar">
+                  <option>Donato</option>
+                </select>
                 <div class="form-group" [ngClass]="{'focused':focus1===true}">
                   <span></span>
                   <span></span>
@@ -34,30 +34,30 @@
                 </div>
 
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary mt-4" (click)="open(classic2, 'Notification', '')" >Solicitar turno</button>
+                  <button type="button" class="btn btn-primary mt-4" (click)="open(classic2, 'Notification', '')">Solicitar turno</button>
                 </div>
                 <div>
-                    <ng-template #classic2 let-c="close" let-d="dismiss">
-                        <div class="modal-content bg-gradient-danger">
-                          <div class="modal-header">
-                            <h6 class="modal-title" id="modal-title-notification">Turno</h6>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
-                              <span aria-hidden="true">×</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <div class="py-3 text-center">
-                              <i class="ni ni-bell-55 ni-3x"></i>
-                              <h4 class="heading mt-4">Donato tiene turno para </h4>
-                              <p>05/06/020 18:15hs</p>
-                            </div>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-white">Confirmar</button>
-                            <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Cancelar</button>
-                          </div>
+                  <ng-template #classic2 let-c="close" let-d="dismiss">
+                    <div class="modal-content bg-gradient-danger">
+                      <div class="modal-header">
+                        <h6 class="modal-title" id="modal-title-notification">Turno</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="py-3 text-center">
+                          <i class="ni ni-bell-55 ni-3x"></i>
+                          <h4 class="heading mt-4">Donato tiene turno para </h4>
+                          <p>05/06/020 18:15hs</p>
                         </div>
-                      </ng-template>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-white">Confirmar</button>
+                        <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Cancelar</button>
+                      </div>
+                    </div>
+                  </ng-template>
                 </div>
               </form>
             </div>

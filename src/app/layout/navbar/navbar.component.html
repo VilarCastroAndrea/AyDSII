@@ -30,12 +30,12 @@
           </a>
           <div class="dropdown-menu-xl dropdown-menu">
             <div class="dropdown-menu-inner">
-              <a routerLinkActive="active" [routerLink]="['documentation/tutorial']" class="media d-flex align-items-center">
+              <a routerLinkActive="active" [routerLink]="['/new-pet']" class="media d-flex align-items-center">
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                   <i class="fa fa-paper-plane-o"></i>
                 </div>
                 <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1" [routerLink]="['/sections']">Agregar paciente</h6>
+                  <h6 class="heading text-primary mb-md-1" [routerLink]="['/new-pet']">Agregar paciente</h6>
                 </div>
               </a>
               <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
@@ -43,7 +43,7 @@
                   <i class="fa fa-pencil-square-o"></i>
                 </div>
                 <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1" [routerLink]="['/user-profile']">Consulta online</h6>
+                  <h6 class="heading text-primary mb-md-1" [routerLink]="['/patient-history']">Lista de Pacientes</h6>
                 </div>
               </a> 
               <!--<a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
@@ -66,7 +66,7 @@
         <li class="nav-item dropdown">
             <a class="nav-link no-caret" data-toggle="dropdown" role="button">
               <i class="ni ni-collection d-lg-none"></i>
-              <span class="nav-link-inner--text" [routerLink]="['/landing']">Adopcion</span>
+              <span class="nav-link-inner--text" [routerLink]="['/pruebas']">PRUEBAS</span>
             </a>
           </li>
       </ul>
@@ -101,5 +101,3 @@
     </div>
   </div>
 </nav>
-
-<!-- probando -->
