@@ -8,6 +8,7 @@ export class Mascota {
     esterilizado: boolean;
     fechaNacimiento: Date;
     propietario: Propietario;
+    
     constructor(nombre?: String, raza?: String, sexo?: String, edad?: Number, esterilizado?: boolean, fechaNacimiento?: Date, 
         propietario?: Propietario) {
         this.nombre = nombre;

@@ -10,7 +10,12 @@ import { Mascota } from 'src/app/data/shared/mascota';
 export class PatientHistoryComponent implements OnInit {
 mascota = new Mascota;
 listMascota;
-  constructor(private mascotaService: MascotaService) { }
+
+  constructor(private mascotaService: MascotaService) {
+   }
+
+
+
 getMascota() {
   this.mascotaService.getMascotas().subscribe(x => {
     this.listMascota = x.filter( x => x.propietario );
@@ -21,7 +26,7 @@ historialClinico(e) {
 console.log(e);
 }
   ngOnInit(): void {
-this.getMascota();
+      this.getMascota();
   }
 
 }

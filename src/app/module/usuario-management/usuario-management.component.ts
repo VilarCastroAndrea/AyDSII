@@ -25,6 +25,8 @@ export class UsuarioManagementComponent implements OnInit {
   }
   guardarUsuario(){
     this.usuarioService.addUsuarios(this.usuario).subscribe(x => console.log(x))
+    alert("Usuario Agregado");
+    this.usuario = new Usuario();
   }
   listarUsuario(){
     this.usuarioService.getUsuarioss().subscribe(x => {

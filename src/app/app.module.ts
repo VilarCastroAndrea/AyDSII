@@ -21,7 +21,14 @@ import { CreatePublicationComponent } from './module/create-publication/create-p
 import { QuestionsComponent } from './module/questions/questions.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioManagementComponent } from './module/usuario-management/usuario-management.component';
-import { PropietarioManagementComponent } from './module/propietario-management/propietario-management.component'; 
+import { PropietarioManagementComponent } from './module/propietario-management/propietario-management.component';
+import { ListTurnoComponent } from './module/list-turno/list-turno.component'; 
+
+
+
+import { LoginService } from './data/services/login.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +43,8 @@ import { PropietarioManagementComponent } from './module/propietario-management/
     CreatePublicationComponent,
     QuestionsComponent,
     UsuarioManagementComponent,
-    PropietarioManagementComponent
+    PropietarioManagementComponent,
+    ListTurnoComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,7 @@ import { PropietarioManagementComponent } from './module/propietario-management/
     HomeModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

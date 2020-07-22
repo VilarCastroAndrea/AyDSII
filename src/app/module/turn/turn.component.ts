@@ -4,6 +4,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TurnoService } from 'src/app/data/services/turno.service';
 import { MascotaService } from 'src/app/data/services/mascota.service';
 import { Turno } from 'src/app/data/shared/turno';
+import { LoginService } from 'src/app/data/services/login.service';
 // import { TurnoService } from '../../data/services/turno.service';
 // import { MascotaService } from '../../data/services/mascota.service';
 // import { Turno } from '../../data/shared/turno';
@@ -22,7 +23,8 @@ export class TurnComponent implements OnInit {
     _id:null,
     fecha:new Date(),
     mascota: new Mascota(),
-     motivo:''
+     motivo:'',
+     estado: false
   };
   closeResult: string;
   isDisabled = true;
@@ -40,12 +42,13 @@ export class TurnComponent implements OnInit {
     }
   }
   constructor(private modalService: NgbModal, private turnoService: TurnoService,
-    private mascotaService: MascotaService) {
+    private mascotaService: MascotaService,public loginService: LoginService) {
     this.listaDeMascotas();
   }
 
   guardarTurno(){
     this.turno.fecha = new Date(this.date);
+    this.turno.estado = false;
     this.turnoService.addTurno(this.turno).subscribe(
     (result)=>{
         alert("Turno Guardada");
@@ -63,9 +66,11 @@ export class TurnComponent implements OnInit {
         console.log('result', result)
         var masc: Mascota = new Mascota();
         result.forEach(element => {
+
           Object.assign(masc, element);
           this.listaMascotas.push(masc);
           masc = new Mascota();
+        
         });
       },
       (error) => {

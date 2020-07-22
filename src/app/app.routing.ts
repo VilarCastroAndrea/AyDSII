@@ -17,6 +17,7 @@ import { PatientHistoryComponent } from './module/patient-history/patient-histor
 import { NewPetComponent } from './module/new-pet/new-pet.component';
 import { PropietarioManagementComponent } from './module/propietario-management/propietario-management.component';
 import { UsuarioManagementComponent } from './module/usuario-management/usuario-management.component';
+import { ListTurnoComponent } from './module/list-turno/list-turno.component';
 
 
 
@@ -34,6 +35,7 @@ const routes: Routes = [
     { path: 'new-pet',          component: NewPetComponent },
     { path: 'usuario-management',          component: UsuarioManagementComponent },
     { path: 'propietario-management',          component: PropietarioManagementComponent },
+    { path: 'listaTurno', component: ListTurnoComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

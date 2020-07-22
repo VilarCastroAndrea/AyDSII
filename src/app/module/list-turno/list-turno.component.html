@@ -1,0 +1,77 @@
+
+<section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class=" col-md-12">
+      <div class=" card card-plain">
+        <div class=" card-header">
+          <h4 class=" card-title">Turnos</h4>
+          <p class=" category">Lista de Turnos Pendientes</p>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Fecha</th>
+                  <th>Motivo</th>
+                 
+                  <th class=" text-center">Mascota</th>
+                  <th class=" text-center">Estado Turno</th>
+                  <th class=" text-center">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listaTurnosNoConfirmados">
+                  <td>{{item.fecha | date :'dd-MM-yyyy h:mm a'}}</td>
+                  <td>{{item.motivo}}</td>
+                  <td>{{item.mascota.nombre}}</td>
+                  <td>{{item.estado && 'CONFIRMADO' || 'PENDIENTE'}}</td>
+                  <td><button class="btn btn-success mr-1" (click)="confirmarTurno(item)">Confirmar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=" col-md-12">
+      <div class=" card card-plain">
+        <div class=" card-header">
+          <p class=" category">Lista de Turnos Confirmados</p>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Fecha</th>
+                  <th>Motivo</th>
+                  <th class=" text-center">Mascota</th>
+                  <th class=" text-center">Estado Turno</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listaTurnosConfirmados">
+                  <td>{{item.fecha | date :'dd-MM-yyyy h:mm a'}}</td>
+                  <td>{{item.motivo}}</td>
+                  <td>{{item.mascota.nombre}}</td>
+                  <td>{{item.estado && 'CONFIRMADO' || 'PENDIENTE'}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+
