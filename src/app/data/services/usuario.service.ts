@@ -1,52 +1,51 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Turno } from '../shared/turno';
+import { Usuario } from '../shared/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TurnoService {
-  urlBase = 'http://localhost:3000/api/turno/';
+export class UsuariosService {
+  urlBase = 'http://localhost:3000/api/usuario/';
 
   constructor(private _http: HttpClient) {
   }
 
-  getTurnos(): Observable<any> {
+  getUsuarioss(): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-
       })
     };
     return this._http.get(this.urlBase , httpOptions );
   }
 
-  addTurno(turno: Turno): Observable<any> {
+  addUsuarios(usuario: Usuario): Observable<any> {
     const httpOptions  = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    const body = JSON.stringify(turno);
+    const body = JSON.stringify(usuario);
     return this._http.post(this.urlBase, body, httpOptions);
   }
 
-
-  deleteTurno(turno: Turno): Observable<any> {
+  deleteUsuario(usuario: Usuario): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
       })
     };
-    return this._http.delete(this.urlBase + turno._id, httpOptions );
+    return this._http.delete(this.urlBase + usuario._id, httpOptions );
   }
-  updateTurno(turno: Turno): Observable<any> {
+
+  updateUsuario(usuario: Usuario): Observable<any> {
     const httpOptions  = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    const body = JSON.stringify(turno);
-    return this._http.put(this.urlBase + turno._id, body, httpOptions);
+    const body = JSON.stringify(usuario);
+    return this._http.put(this.urlBase + usuario._id, body, httpOptions);
   }
 
 

@@ -19,7 +19,9 @@ import { TurnComponent } from './module/turn/turn.component';
 import { PatientHistoryComponent } from './module/patient-history/patient-history.component';
 import { CreatePublicationComponent } from './module/create-publication/create-publication.component';
 import { QuestionsComponent } from './module/questions/questions.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { UsuarioManagementComponent } from './module/usuario-management/usuario-management.component';
+import { PropietarioManagementComponent } from './module/propietario-management/propietario-management.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
     TurnComponent,
     PatientHistoryComponent,
     CreatePublicationComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    UsuarioManagementComponent,
+    PropietarioManagementComponent
   ],
   imports: [
     BrowserModule,

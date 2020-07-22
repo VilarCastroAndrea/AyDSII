@@ -1,0 +1,76 @@
+<section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span> 
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card bg-secondary shadow border-0">
+            <div id="logo-container" class="card-header bg-white pb-5">
+              <img src="./assets/img/brand/logo2.png" style="width: 300px; " class="img-fluid">
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <small>Nuevo Usuario</small>
+              </div>
+              <form>
+                  <div class="form-group row">
+                    <label for="staticEmail" class="col-6 col-form-label" style="padding: 0;">Nombre</label>
+                    <div class="col-6" style="padding: 0;">
+                      <input type="text" class="form-control" id="nombre" [(ngModel)]="propietario.nombre" name="nombre" (change)="change()" required>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="form-group row">
+                    <label for="Apellido" class="col-6 col-form-label" style="padding: 0;">Apellido</label>
+                    <div class="col-6" style="padding: 0;">
+                      <input type="text" class="form-control" id="Apellido" [(ngModel)]="propietario.apellido" name="apellido" (change)="change()">
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="form-group row">
+                    <label for="Domicilio" class="col-6 col-form-label" style="padding: 0;">Domicilio</label>
+                    <div class="col-6" style="padding: 0;">
+                      <input type="text" class="form-control" id="Domicilio" [(ngModel)]="propietario.domicilio" name="domicilio" (change)="change()">
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="form-group row">
+                    <label for="Email" class="col-6 col-form-label" style="padding: 0;">Email</label>
+                    <div class="col-6" style="padding: 0;">
+                      <input type="text" class="form-control" id="Email" [(ngModel)]="propietario.email" name="email" (change)="change()">
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="form-group row">
+                    <label for="Telefono" class="col-6 col-form-label" style="padding: 0;">Telefono</label>
+                    <div class="col-6" style="padding: 0;">
+                      <input type="text" class="form-control" id="Telefono" [(ngModel)]="propietario.telefono" name="telefono" (change)="change()">
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Seleccionar Usuario</label>
+                    <select class="form-control" id="exampleFormControlSelect1" *ngFor="let item of listaUsuarios" (change)="change2(item)"
+                    [(ngModel)]="propietario.usuario" name="usuario">
+                      <option [value]="item">{{item.nombreUsuario}}</option>
+                    </select>
+                  </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" (click)="guardarPropietario();" data-dismiss="modal" >Confirmar</button>
+                    <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Cancelar</button> -->
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 

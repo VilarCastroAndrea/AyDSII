@@ -1,0 +1,56 @@
+<section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span> 
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card bg-secondary shadow border-0">
+            <div id="logo-container" class="card-header bg-white pb-5">
+              <img src="./assets/img/brand/logo2.png" style="width: 300px; " class="img-fluid">
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <small>Nuevo Usuario</small>
+              </div>
+              <form>
+                  <div class="form-group row">
+                    <label for="staticEmail" class="col-6 col-form-label" style="padding: 0;">Nombre de usuario</label>
+                    <div class="col-6" style="padding: 0;">
+                      <input type="text" class="form-control" id="staticEmail" [(ngModel)]="usuario.nombreUsuario" name="nombre" (change)="change()" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputProfile" class="col-6 col-form-label">Profile</label>
+                    <div class="col-6">
+                      <input type="text" class="form-control" id="inputProfile" [(ngModel)]="usuario.perfil" name="perfil" (change)="change()">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword" class="col-6 col-form-label">Password</label>
+                    <div class="col-6">
+                      <input type="password" class="form-control" id="inputPassword" [(ngModel)]="usuario.password" name="pass" (change)="change()">
+                    </div>
+                  </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" (click)="guardarUsuario();" data-dismiss="modal" >Confirmar</button>
+                    <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Cancelar</button> -->
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+
+
+

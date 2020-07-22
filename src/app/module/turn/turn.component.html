@@ -22,19 +22,22 @@
                   <small>Solitud de turno</small>
                 </div>
                 <form role="form">
-                  <select class="col-12" ng-model="selectedCar"  >
-                    <option *ngFor="let item of listaMascotas">{{item.nombre}}</option>
-                  </select>
+                  <select id="mascota" class="form-control form-control-sm col-md-12"  required name="mascota" (click)="botonHabilitado()" #mascota="ngModel" [(ngModel)]="turno.mascota">
+                    <option selected="selected" disabled>Seleccione una opcion</option>
+                    <option *ngFor="let m of listaMascotas" [ngValue]="m" >{{m.nombre}} - {{m.raza}} - {{m.sexo}}</option>
+                </select>
                   <div class="form-group" [ngClass]="{'focused':focus1===true}">
                     <span></span>
                     <span></span>
                     <div class="input-group input-group-alternative mb-3">
-                      <input class="form-control" placeholder="Motivo del turno" type="email" (focus)="focus1=true" (blur)="focus1=false"  (change)="onEnter($event)">
+                      <input class="form-control" [(ngModel)]="this.turno.motivo" [ngModelOptions]="{standalone: true}" placeholder="Motivo del turno" 
+                      type="email" (focus)="focus1=true" (blur)="focus1=false"  (ngModelChange)="botonHabilitado()">
                     </div>
                   </div>
   
                   <div class="text-center">
                     <button type="button" class="btn btn-primary mt-4" (click)="open(classic2, 'Notification', '')"  [disabled]="isDisabled">Solicitar turno</button>
+                    <!-- <button type="button" class="btn btn-primary mt-4" (click)="agregarTurno();open(classic2, 'Notification', '')"  [disabled]="isDisabled">Solicitar turno</button> -->
                   </div>
                   <div>
                     <ng-template #classic2 let-c="close" let-d="dismiss">
@@ -48,12 +51,12 @@
                         <div class="modal-body">
                           <div class="py-3 text-center">
                             <i class="ni ni-bell-55 ni-3x"></i>
-                            <h4 class="heading mt-4">Donato tiene turno para </h4>
+                            <h4 class="heading mt-4">{{turno.mascota.nombre}} tiene turno para </h4>
                             <p>{{date | date:'dd/MM/yyyy h:mm'}} </p>
                           </div>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-white">Confirmar</button>
+                          <button type="button" class="btn btn-white" (click)="guardarTurno();c('Close click')" data-dismiss="modal">Confirmar</button>
                           <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Cancelar</button>
                         </div>
                       </div>

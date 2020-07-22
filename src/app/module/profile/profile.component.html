@@ -14,7 +14,7 @@
     </svg>
   </div>
 </section>
-<section class="section">
+<section class="section" *ngIf="mascota" >
   <div class="container">
     <div class="card card-profile shadow mt--300">
       <div class="px-4">
@@ -22,26 +22,23 @@
           <div class="col-lg-12">
             <div class="card card-lift--hover shadow border-0">
               <div class="card-body py-5 row">
-                <div class="col-5">
-                  <img src="./assets/img/adopcion/Blue2.jpg" alt="Raised image" class="img-fluid rounded shadow-lg" style="width: 250px;">
-                </div>
-                <div class="col-7">
-                  <h1>Donato</h1>
+                <div class="col-12">
+                  <h1>{{mascota.nombre}}</h1>
                   <div class="row">
                     <div class="col-6">
-                      <h5 style="float: left;">Raza: Caniche </h5>
-                      <h5 style="float: left;">Nacimiento: 28/11/2012</h5>
+                      <h5 class="col-12" style="float: left;">Raza: {{mascota.raza}} </h5>
+                      <h5 class="col-12" style="float: left;">Nacimiento: {{mascota.fechaNacimiento | date}}</h5>
                     </div>
                     <div class="col-6">
-                      <h5 style="float: left;">Sexo: Macho</h5>
-                      <h5 style="float: left;">Esterilizado: Si</h5>
+                      <h5 class="col-12" style="float: left;">Sexo: {{mascota.sexo}}</h5>
+                      <h5 class="col-12" style="float: left;">Esterilizado: {{esterilizado}}</h5>
                     </div>
                   </div>
-                  <h3>Propetario: Reynaga Matias</h3>
+                  <h3>Propetario: {{mascota.propietario.apellido}} {{mascota.propietario.nombre}}</h3>
                   <div>
-                    <h5 style="float: left;">Domicilio: Coronel Aereas 354</h5>
-                    <h5 style="float: left;">E-mail: reynagam96@gmail.com</h5>
-                    <h5 style="float: left;">Telefono: 38847571105</h5>
+                    <h5 class="col-12" style="float: left;">Domicilio: {{mascota.propietario.domicilio}}</h5>
+                    <h5 class="col-12" style="float: left;">E-mail: {{mascota.propietario.email}}</h5>
+                    <h5 class="col-12" style="float: left;">Telefono: {{mascota.propietario.telefono}}</h5>
                   </div>
                 </div>
               </div>

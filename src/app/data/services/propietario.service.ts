@@ -1,52 +1,51 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Turno } from '../shared/turno';
+import { Propietario } from './../shared/propietario';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TurnoService {
-  urlBase = 'http://localhost:3000/api/turno/';
+export class PropietariosService {
+  urlBase = 'http://localhost:3000/api/propietario/';
 
   constructor(private _http: HttpClient) {
   }
 
-  getTurnos(): Observable<any> {
+  getPropietarios(): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-
       })
     };
     return this._http.get(this.urlBase , httpOptions );
   }
 
-  addTurno(turno: Turno): Observable<any> {
+  addPropietarios(propietario: Propietario): Observable<any> {
     const httpOptions  = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    const body = JSON.stringify(turno);
+    const body = JSON.stringify(propietario);
     return this._http.post(this.urlBase, body, httpOptions);
   }
 
-
-  deleteTurno(turno: Turno): Observable<any> {
+  deletePropietario(propietario: Propietario): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
       })
     };
-    return this._http.delete(this.urlBase + turno._id, httpOptions );
+    return this._http.delete(this.urlBase + propietario._id, httpOptions );
   }
-  updateTurno(turno: Turno): Observable<any> {
+
+  updatePropietario(propietario: Propietario): Observable<any> {
     const httpOptions  = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    const body = JSON.stringify(turno);
-    return this._http.put(this.urlBase + turno._id, body, httpOptions);
+    const body = JSON.stringify(propietario);
+    return this._http.put(this.urlBase + propietario._id, body, httpOptions);
   }
 
 

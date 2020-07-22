@@ -1,5 +1,58 @@
-<!-- historial cliente -->
+
 <section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class=" col-md-12">
+      <div class=" card card-plain">
+        <div class=" card-header">
+          <h4 class=" card-title">Pacientes</h4>
+          <p class=" category">Lista de pacientes</p>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Propietario</th>
+                  <th>Paciente</th>
+                  <th class=" text-center">Historial Clienico</th>
+                  <th class=" text-center">Eliminar/modificar/consulta</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listMascota">
+                  <td>{{item.propietario.nombre}} - {{item.propietario.apellido}}</td>
+                  <td> {{item.nombre}}</td>
+                  <td class=" text-center">
+                    <button type="button" class="btn btn-primary" [routerLink]="['/profile',item._id]" >Historial Clinico</button>
+                  </td>
+                  <td class=" text-center">
+                    <button type="button" class="btn btn-primary fa fa-times " style="background-color: red; border: red"></button>
+                    <button type="button" class="btn btn-primary fa fa-pencil-square-o " style="background-color: green; border:green"></button>
+                    <button type="button" class="btn btn-primary fa fa-address-book-o" style="background-color:rgb(54, 71, 223) ; border:rgb(54, 71, 223)"></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+
+
+
+<!-- historial cliente -->
+<!-- <section class="section section-shaped section-lg">
     <div class="shape shape-style-1 bg-gradient-default">
       <span></span>
       <span></span>
@@ -166,4 +219,4 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->

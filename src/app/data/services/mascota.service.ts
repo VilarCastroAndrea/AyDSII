@@ -7,49 +7,45 @@ import { Mascota } from './../shared/mascota';
   providedIn: 'root'
 })
 export class MascotaService {
-  urlBase:string ="http://localhost:3000/api/mascota/";
+  urlBase = 'http://localhost:3000/api/mascota/';
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
-  getMascotas():Observable<any>{
+  getMascotas(): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
       })
-    }   
+    };
     return this._http.get(this.urlBase , httpOptions );
   }
 
-  addMascota(mascota:Mascota):Observable<any>{
-    console.log("entro al service"); 
+  addMascota(mascota: Mascota): Observable<any> {
     const httpOptions  = {
       headers: new HttpHeaders({
-        'Content-Type':'application/json'
+        'Content-Type': 'application/json'
       })
-    }; 
-    var body = JSON.stringify(mascota);
-    return this._http.post(this.urlBase,body,httpOptions);
+    };
+    const body = JSON.stringify(mascota);
+    return this._http.post(this.urlBase, body, httpOptions);
   }
 
-  deleteMascota(mascota:Mascota):Observable<any>{
+  deleteMascota(mascota: Mascota): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
 
       })
-    }   
+    };
     return this._http.delete(this.urlBase + mascota._id, httpOptions );
   }
 
-  updateMascota(mascota:Mascota):Observable<any>{
-    console.log("SERVICE UPDATE...."); 
+  updateMascota(mascota: Mascota): Observable<any> {
     const httpOptions  = {
       headers: new HttpHeaders({
-        'Content-Type':'application/json'
+        'Content-Type': 'application/json'
       })
-    }; 
-    var body = JSON.stringify(mascota);
-    return this._http.put(this.urlBase + mascota._id,body,httpOptions);;
+    };
+    const body = JSON.stringify(mascota);
+    return this._http.put(this.urlBase + mascota._id, body, httpOptions);
   }
 
-
-  
 }

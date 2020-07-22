@@ -15,21 +15,25 @@ import { AdopcionComponent } from './module/adopcion/adopcion.component';
 import { ProfileComponent } from './module/profile/profile.component';
 import { PatientHistoryComponent } from './module/patient-history/patient-history.component';
 import { NewPetComponent } from './module/new-pet/new-pet.component';
+import { PropietarioManagementComponent } from './module/propietario-management/propietario-management.component';
+import { UsuarioManagementComponent } from './module/usuario-management/usuario-management.component';
 
 
 
 
-const routes: Routes =[
+const routes: Routes = [
   // { path: 'register',           component: SignupComponent },
   // { path: 'landing',          component: LandingComponent },
   // { path: 'solicitarTurno',          component: SignupComponent },
     { path: 'home',             component: HomeComponent },
-    { path: 'profile',     component: ProfileComponent },
+    { path: 'profile/:id',     component: ProfileComponent },
     { path: 'login',          component: LoginComponent },
     { path: 'turn',          component: TurnComponent },
     { path: 'pruebas',          component: ProfileComponent },
     { path: 'patient-history',          component: PatientHistoryComponent },
     { path: 'new-pet',          component: NewPetComponent },
+    { path: 'usuario-management',          component: UsuarioManagementComponent },
+    { path: 'propietario-management',          component: PropietarioManagementComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
@@ -37,7 +41,7 @@ const routes: Routes =[
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{
+    RouterModule.forRoot(routes, {
       useHash: true
     })
   ],
